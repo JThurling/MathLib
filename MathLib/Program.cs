@@ -2,9 +2,6 @@
 
 using Lib;
 
-Console.WriteLine(RealNumFunctions.IsPositive(-10));
-Console.WriteLine(RealNumFunctions.IsNegative(-10));
-Console.WriteLine(RealNumFunctions.Absolute(10));
-Console.WriteLine(Factors.IsPrime(10));
-Console.WriteLine(Factors.IsPrime(11));
-Console.WriteLine(Factors.FindCommonMultiples(2, 3, 6));
+var arr = Factors.ProductOfPrimes(120);
+
+Console.WriteLine(arr.Beautify());
