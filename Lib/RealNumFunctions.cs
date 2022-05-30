@@ -3,15 +3,24 @@ using System.Text.RegularExpressions;
 
 namespace Lib;
 
-internal class RealNumFunctions
+public class RealNumFunctions
 {
-    public static bool IsPositive<T>(T type)
+    public static bool IsPositive<T>(T num)
     {
-        string num = type.ToString();
-        if (IsNum(type))
+        if (IsNum(num))
         {
-            var value = ReturnNumValue(num, typeof(T));
-            return Comparer.Default.Compare(value, 0) < 0;
+            return Comparer.Default.Compare(num, 0) > 0;
+        }
+
+        return false;
+    }
+    
+    public static bool IsNegative<T>(T num)
+    {
+        
+        if (IsNum(num))
+        {
+            return Comparer.Default.Compare(num, 0) < 0;
         }
 
         return false;
@@ -34,7 +43,38 @@ internal class RealNumFunctions
 
     private static bool IsNum(object num)
     {
-        Regex isNum = new Regex("^[0-9]+$");
-        return isNum.Match((string) num).Success;
+        Regex isNum = new Regex(@"^-?[0-9]\d*(\.\d+)?$");
+        return isNum.Match(num.ToString()).Success;
+    }
+    
+    public static float Absolute(float num)
+    {
+        if (IsNegative(num))
+        {
+            return -(num);
+        }
+
+        return num;
+    }
+    
+    public static int Absolute(int num)
+    {
+        if (IsNegative(num))
+        {
+            var val = -(num);
+            return -(num);
+        }
+
+        return num;
+    }
+    
+    public static double Absolute(double num)
+    {
+        if (IsNegative(num))
+        {
+            return -(num);
+        }
+
+        return num;
     }
 }

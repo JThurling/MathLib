@@ -1,0 +1,12 @@
+C:\microservices\AspnetMicroservices\MathLib\Lib\bin\Debug\net6.0\Lib.deps.json
+C:\microservices\AspnetMicroservices\MathLib\Lib\bin\Debug\net6.0\Lib.dll
+C:\microservices\AspnetMicroservices\MathLib\Lib\bin\Debug\net6.0\Lib.pdb
+C:\microservices\AspnetMicroservices\MathLib\Lib\obj\Debug\net6.0\Lib.csproj.AssemblyReference.cache
+C:\microservices\AspnetMicroservices\MathLib\Lib\obj\Debug\net6.0\Lib.GeneratedMSBuildEditorConfig.editorconfig
+C:\microservices\AspnetMicroservices\MathLib\Lib\obj\Debug\net6.0\Lib.AssemblyInfoInputs.cache
+C:\microservices\AspnetMicroservices\MathLib\Lib\obj\Debug\net6.0\Lib.AssemblyInfo.cs
+C:\microservices\AspnetMicroservices\MathLib\Lib\obj\Debug\net6.0\Lib.csproj.CoreCompileInputs.cache
+C:\microservices\AspnetMicroservices\MathLib\Lib\obj\Debug\net6.0\Lib.dll
+C:\microservices\AspnetMicroservices\MathLib\Lib\obj\Debug\net6.0\refint\Lib.dll
+C:\microservices\AspnetMicroservices\MathLib\Lib\obj\Debug\net6.0\Lib.pdb
+C:\microservices\AspnetMicroservices\MathLib\Lib\obj\Debug\net6.0\ref\Lib.dll
