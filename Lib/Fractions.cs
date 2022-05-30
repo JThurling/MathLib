@@ -1,6 +1,6 @@
 ﻿namespace Lib;
 
-public static class Fractions
+public static class Factors
 {
     public static bool IsPrime(int num)
     {
