@@ -13,20 +13,20 @@ public static class Fractions
         }
         return true;
     }
-
-    // TODO correct Algorithm
+    
     public static int FindCommonMultiples(int numA, int numB, int iterations)
     {
-        int i = 1;
-        while (i < iterations)
+        for (int i = 1; i <= iterations; i++)
         {
             int resultA = numA * i;
-            int resultB = numB * i;
-            if (resultA == resultB)
+            for (int j = 1; j <= iterations; j++)
             {
-                return resultA;
+                int resultB = numB * j;
+                if (resultB == resultA)
+                {
+                    return resultB;
+                }
             }
-            i++;
         }
 
         return 0;
