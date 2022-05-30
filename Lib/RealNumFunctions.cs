@@ -3,7 +3,7 @@ using System.Text.RegularExpressions;
 
 namespace Lib;
 
-internal class RealNumFunctions<T> : IEquatable<T>
+internal class RealNumFunctions
 {
     public static bool IsPositive<T>(T type)
     {
@@ -36,10 +36,5 @@ internal class RealNumFunctions<T> : IEquatable<T>
     {
         Regex isNum = new Regex("^[0-9]+$");
         return isNum.Match((string) num).Success;
-    }
-
-    public bool Equals(T? other)
-    {
-        throw new NotImplementedException();
     }
 }
