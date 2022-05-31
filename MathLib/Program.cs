@@ -2,6 +2,9 @@
 
 using Lib;
 
-var arr = Factors.ProductOfPrimes(120);
+var leastPrime = Factors.LeastCommonMultiple(10, 24);
 
-Console.WriteLine(arr.Beautify());
+foreach (KeyValuePair<string, int> pair in leastPrime)
+{
+    Console.WriteLine($"{pair.Key}: {pair.Value}");
+}

@@ -68,6 +68,80 @@ public static class Factors
         return division;
     }
 
+    // TODO most common multiple -> implementation
+    public static void MostCommonMultiple(int numA, int numB)
+    {
+        return;
+    }
+    
+    // TODO finish implementation
+    public static Dictionary<string, int> LeastCommonMultiple(int numA, int numB)
+    {
+        var primeFactorsA = ProductOfPrimes(numA);
+        var primeFactorsB = ProductOfPrimes(numB);
+
+        return ReturnLesserMultiple(primeFactorsA, primeFactorsB);;
+    }
+
+    private static Dictionary<string, int> ReturnLesserMultiple(int[] primeFactorsA, int[] primeFactorsB)
+    {
+        var dictA = GetArrValues(primeFactorsA);
+        var dictB = GetArrValues(primeFactorsB);
+
+        Dictionary<string, int> finalPrime = new Dictionary<string, int>();
+
+        foreach (KeyValuePair<string, int> pair in dictA)
+        {
+            if (dictB.TryGetValue(pair.Key, out int valueB))
+            {
+                if (pair.Value < valueB)
+                {
+                    finalPrime.Add(pair.Key, valueB);
+                }
+                else if (pair.Value > valueB)
+                {
+                    finalPrime.Add(pair.Key, pair.Value);
+                }
+            }
+            else
+            {
+                finalPrime.Add(pair.Key, pair.Value);
+            }
+        }
+        
+        foreach (KeyValuePair<string, int> pair in dictB)
+        {
+            if (finalPrime.TryGetValue(pair.Key, out int finalValue))
+            {
+                continue;
+            }
+
+            finalPrime.Add(pair.Key, pair.Value);
+        }
+
+        return finalPrime;
+    }
+
+    public static Dictionary<string, int> GetArrValues(int[] primeFactorsA)
+    {
+        Dictionary<string, int> trackingDictionaryA = new Dictionary<string, int>();
+
+        foreach (var i in primeFactorsA)
+        {
+            if (!trackingDictionaryA.TryGetValue(i.ToString(), out int value))
+            {
+                trackingDictionaryA.Add(i.ToString(), 1);
+            }
+            else
+            {
+                trackingDictionaryA[i.ToString()]++;
+            }
+        }
+
+        return trackingDictionaryA;
+    }
+
+
     public static string Beautify(this int[] arr)
     {
         string value = "";
