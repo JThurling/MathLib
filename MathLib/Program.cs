@@ -2,6 +2,6 @@
 
 using Lib;
 
-var leastPrime = Factors.MostCommonMultiple(14, 28);
+var leastPrime = Fractions.SimplifyFraction(16, 20);
 
-Console.WriteLine(leastPrime);
+Console.WriteLine(leastPrime.Beautify());
