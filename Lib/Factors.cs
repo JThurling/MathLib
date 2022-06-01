@@ -68,19 +68,38 @@ public static class Factors
         return division;
     }
 
-    // TODO most common multiple -> implementation
-    public static void MostCommonMultiple(int numA, int numB)
-    {
-        return;
-    }
-    
-    // TODO finish implementation
-    public static Dictionary<string, int> LeastCommonMultiple(int numA, int numB)
+    public static int MostCommonMultiple(int numA, int numB)
     {
         var primeFactorsA = ProductOfPrimes(numA);
         var primeFactorsB = ProductOfPrimes(numB);
 
-        return ReturnLesserMultiple(primeFactorsA, primeFactorsB);;
+        return ReturnGreatestCommonFactor(primeFactorsA, primeFactorsB).CommonPrimes();
+    }
+
+    private static List<int> ReturnGreatestCommonFactor(int[] primeFactorsA, int[] primeFactorsB)
+    {
+        List<int> commonPrimes = new List<int>();
+
+        for (int j = 0; j < primeFactorsA.Length; j++)
+        {
+            for (int i = 0; i < primeFactorsB.Length; i++)
+            {
+                if (primeFactorsA[j] == primeFactorsB[i] && !commonPrimes.Contains(primeFactorsA[j]))
+                {
+                    commonPrimes.Add(primeFactorsA[j]);
+                }
+            }
+        }
+
+        return commonPrimes;
+    }
+
+    public static int LeastCommonMultiple(int numA, int numB)
+    {
+        var primeFactorsA = ProductOfPrimes(numA);
+        var primeFactorsB = ProductOfPrimes(numB);
+        
+        return ReturnLesserMultiple(primeFactorsA, primeFactorsB).LesserMultiple();
     }
 
     private static Dictionary<string, int> ReturnLesserMultiple(int[] primeFactorsA, int[] primeFactorsB)
@@ -141,6 +160,32 @@ public static class Factors
         return trackingDictionaryA;
     }
 
+    public static int LesserMultiple(this Dictionary<string, int> lesserMultiple)
+    {
+        int lesser = 1;
+
+        foreach (var multiple in lesserMultiple)
+        {
+            for (int i = 1; i <= multiple.Value; i++)
+            {
+                lesser *= int.Parse(multiple.Key);
+            }
+        }
+        
+        return lesser;
+    }
+
+    public static int CommonPrimes(this List<int> primes)
+    {
+        int value = 1;
+
+        foreach (var prime in primes)
+        {
+            value *= prime;
+        }
+
+        return value;
+    }
 
     public static string Beautify(this int[] arr)
     {

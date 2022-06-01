@@ -2,9 +2,6 @@
 
 using Lib;
 
-var leastPrime = Factors.LeastCommonMultiple(10, 24);
+var leastPrime = Factors.MostCommonMultiple(14, 28);
 
-foreach (KeyValuePair<string, int> pair in leastPrime)
-{
-    Console.WriteLine($"{pair.Key}: {pair.Value}");
-}
+Console.WriteLine(leastPrime);
