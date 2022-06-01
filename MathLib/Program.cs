@@ -2,6 +2,6 @@
 
 using Lib;
 
-var leastPrime = Fractions.SimplifyFraction(16, 20);
+var leastPrime = Fractions.Division(1, 2);
 
-Console.WriteLine(leastPrime.Beautify());
+Console.WriteLine(leastPrime);

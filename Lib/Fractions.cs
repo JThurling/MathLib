@@ -45,13 +45,22 @@ public static class Fractions
     // TODO fractionLowestTerms = 2 fractions
     public static (int, int) FractionLowestTerms((int, int) fractionA, (int, int) fractionB)
     {
-        return (1, 1);
+        (int, int) fractionToBeSimplified = (fractionA.Item1 * fractionB.Item1, fractionA.Item2 * fractionB.Item2);
+        
+        return SimplifyFraction(fractionToBeSimplified.Item1, fractionToBeSimplified.Item2);
     }
-    
-    // TODO IncreaseFractionByMultiplication = 2 fractions
     public static (int, int) IncreaseFractionByMultiplication((int, int) fractionA, int multipliedBy)
     {
-        return (1, 1);
+        return (fractionA.Item1 * multipliedBy, fractionA.Item2 * multipliedBy);
+    }
+
+    public static float? Division(float numerator, float denominator)
+    {
+        if (denominator == 0)
+        {
+            return null;
+        }
+        return numerator / denominator;
     }
 
     public static int Multiply(this int[] arr)
