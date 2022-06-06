@@ -79,7 +79,13 @@ public static class Fractions
 
         return (timesDivisionA - timesDivisionB, leastCommonMultiple);
     }
-    
+
+    public static (int, int) MultiplyFractions((int, int) fractionA, (int, int) fractionB)
+        => SimplifyFraction(fractionA.Item1 * fractionB.Item1, fractionA.Item2 * fractionB.Item2);
+
+    public static (int, int) DivideFractions((int, int) fractionA, (int, int) fractionB) 
+        => SimplifyFraction(fractionA.Item1 * fractionB.Item2, fractionA.Item2 * fractionB.Item1);
+
     public static float? Division(float numerator, float denominator)
     {
         if (denominator == 0)
