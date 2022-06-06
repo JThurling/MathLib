@@ -2,6 +2,6 @@
 
 using Lib;
 
-var leastPrime = Fractions.Division(1, 2);
+var leastPrime = Fractions.SubtractFractions((3, 5), (1, 3));
 
 Console.WriteLine(leastPrime);

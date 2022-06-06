@@ -54,6 +54,32 @@ public static class Fractions
         return (fractionA.Item1 * multipliedBy, fractionA.Item2 * multipliedBy);
     }
 
+    public static (int, int) AddFractions((int, int) fractionA, (int, int) fractionB)
+    {
+        int leastCommonMultiple = Factors.LeastCommonMultiple(fractionA.Item2, fractionB.Item2);
+
+        int timesDividedByFractionA = leastCommonMultiple / fractionA.Item2;
+        int timesDividedByFractionB = leastCommonMultiple / fractionB.Item2;
+
+        int timesDivisionA = timesDividedByFractionA * fractionA.Item1;
+        int timesDivisionB = timesDividedByFractionB * fractionB.Item1;
+
+        return (timesDivisionA + timesDivisionB, leastCommonMultiple);
+    }
+    
+    public static (int, int) SubtractFractions((int, int) fractionA, (int, int) fractionB)
+    {
+        int leastCommonMultiple = Factors.LeastCommonMultiple(fractionA.Item2, fractionB.Item2);
+
+        int timesDividedByFractionA = leastCommonMultiple / fractionA.Item2;
+        int timesDividedByFractionB = leastCommonMultiple / fractionB.Item2;
+
+        int timesDivisionA = timesDividedByFractionA * fractionA.Item1;
+        int timesDivisionB = timesDividedByFractionB * fractionB.Item1;
+
+        return (timesDivisionA - timesDivisionB, leastCommonMultiple);
+    }
+    
     public static float? Division(float numerator, float denominator)
     {
         if (denominator == 0)
