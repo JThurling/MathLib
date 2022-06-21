@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Lib.Constants
+namespace Lib
 {
-    public static class PlaceholderConsts
+    public static class Root
     {
-        public const string X = "x";
+        public static double Square(double num) => Math.Sqrt(num);
     }
 }

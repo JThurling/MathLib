@@ -2,6 +2,6 @@
 
 using Lib;
 
-var leastPrime = Decimals.Round(15.1250596f, 4);
+var leastPrime = Decimals.Round(15.1259526f, 4)
 
 Console.WriteLine(leastPrime);

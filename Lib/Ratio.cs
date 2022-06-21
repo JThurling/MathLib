@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Lib.Constants
+namespace Lib
 {
-    public static class PlaceholderConsts
+    public static class Ratio
     {
-        public const string X = "x";
+        // TODO - implement cross-multiple with a place holder i.e. x
     }
 }
